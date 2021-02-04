@@ -48,6 +48,16 @@ class LinkedList:
             self.tail = newNode
         return self.tail
 
+    def addLast(self, value):
+        newNode = Node(value)
+        if self.head is None:
+            self.head = newNode
+            self.tail = newNode
+        else:
+            self.tail.next = newNode
+            self.tail = newNode
+        return self.tail
+
     def generate(self, n, min_val, max_val):
         for i in range(n):
             self.add(randint(min_val, max_val))
